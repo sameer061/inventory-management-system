@@ -1,0 +1,39 @@
+{% extends 'partials/base.html' %}
+{% block title %}Products Edit Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .form-control{
+      text-transform: uppercase;
+     
+  
+    }
+  
+   .container{
+    background-color:#31363b;
+    color:rgb(255, 255, 255);
+    border-radius: 10px;
+    
+   }
+  
+  </style>
+  
+  <div class="row my-4">
+    <div class="container-fluid p-4">
+          <form method="post">
+              {% csrf_token %}
+            
+              {{ form|crispy }}
+              <br>
+                  <div class="d-grid gap-2 d-md-block">
+                <button type="submit" class="btn btn-outline-success btn-lg mb-4 form-control">Submit</button>
+                </div>
+              </form>
+          </div>
+  
+      
+      </div>
+</div>
+
+{% endblock %}

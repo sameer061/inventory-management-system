@@ -1,0 +1,155 @@
+<style>
+
+    .container{
+      color: white;
+    }
+    .order-card {
+      color: rgb(255, 255, 255);
+    }
+
+    .bg-c-blue {
+      background: whitesmoke;
+    }
+
+    .bg-c-green {
+      background:#007bff;
+    }
+
+    .bg-c-yellow {
+      background: #d44242;
+    }
+
+    .bg-c-pink {
+      background: #663a30;
+    }
+
+ .card#members:hover{
+  padding: 5px;
+  box-shadow: 0 8px 8px 0 #000000, 0 6px 20px 0 #0c0d0e inset;
+ }   
+ .card#products:hover{
+padding: 5px;
+box-shadow: 0 8px 8px 0 #000000, 0 6px 20px 0 #0c0b0b inset;
+
+ }   
+ .card#orders:hover{
+  padding: 5px;
+  box-shadow: 0 8px 8px 0 #000000, 0 6px 20px 0 #0e0c0c inset;
+ }   
+
+.card#members{
+  background:#007bff;
+
+}
+.card#products{
+  background: whitesmoke;
+}
+.card#orders{
+    background:#d44242;
+}
+    .card {
+      
+      background-color:#31363b;
+      border: 1px solid rgb(7, 0, 0);
+      margin-bottom: 30px;
+
+    }
+
+    .card .card-block {
+      padding: 25px;
+  
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+    header {
+    left: 0px;
+    right: 0px;
+  }
+  #tor {
+    background-color:#31363b;
+    padding: 10px;
+    box-shadow: 10px 8px 8px 5px #0aa0ce;
+  }
+
+
+  </style>
+
+
+
+<div class="row">
+
+    <div class="col-md-12 mt-4">
+        <div class="card" >
+            <div class="card-header bg-secondary text-center"  >
+               DASHBOARD
+            </div>
+            <div class="card-body"  >
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="text-decoration-none "  href="{% url 'dashboard-customers' %}" style="text-decoration: none;color:rgb(0, 0, 0); ">
+                            <div class="card my-card shadow" id="products">
+                                <div class="card-body text-center">
+                                  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+                                  <lord-icon
+                                      src="https://cdn.lordicon.com/uukerzzv.json"
+                                      trigger="hover"
+                                      colors="primary:#4030e8,secondary:#242424"
+                                      style="width:150px;height:150px">
+                                  </lord-icon>                    
+                                    <h4>Members </h4>
+                                    <h3>{{ customer_count }}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="text-decoration-none " href="{% url 'dashboard-products' %}" style="text-decoration: none;color:rgb(255, 255, 255);">
+                            <div class="card my-card shadow" id="members">
+                                <div class="card-body text-center">
+                                  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+                                  <lord-icon
+                                      src="https://cdn.lordicon.com/slkvcfos.json"
+                                      trigger="hover"
+                                      colors="primary:#000000,secondary:#ffffff"
+                                      style="width:150px;height:150px">
+                                  </lord-icon>
+                                    <h4>Products </h4>
+                                    <h3>{{ product_count }}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="text-decoration-none " href="{% url 'dashboard-order' %}" style="text-decoration: none;color:rgb(255, 255, 255);">
+                            <div class="card my-card shadow" id="orders">
+                                <div class="card-body text-center">
+                                  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+                                  <lord-icon
+                                      src="https://cdn.lordicon.com/nlzvfogq.json"
+                                      trigger="hover"
+                                      colors="primary:#000000,secondary:#b4b4b4"
+                                      style="width:150px;height:150px">
+                                  </lord-icon>
+                                    <h4>Orders</h4>
+                                    <h3>{{ order_count }}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

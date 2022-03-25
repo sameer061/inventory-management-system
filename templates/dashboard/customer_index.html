@@ -1,0 +1,61 @@
+{% load crispy_forms_tags %}
+<style>
+  
+  
+  
+    .card {
+      color: #fff;
+      background-color:#31363b;
+      border: 1px solid black;
+    }
+
+ 
+  </style>
+<div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-light">
+                    Make Request
+                </div>
+                <div class="card-body">
+                    <form method="POST" >
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-info btn-block" type="submit" value="Make Request">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card  card-body">
+                <div class="card-header">
+                    <a class="btn btn-primary  btn-lg btn-block"> Orders Records</a>
+                </div>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table   table-dark table-hover table-sm ">
+                        <thead class="thead-dark text-center" >
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in order %}
+                            {% if order.customer == user %}
+                            <tr class="text-center">
+                                <td>{{ order.name }}</td>
+                                <td>{{ order.name.category }}</td>
+                                <td>{{ order.order_quantity }}</td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

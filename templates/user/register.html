@@ -1,0 +1,52 @@
+{% extends 'partials/base.html' %}
+{% block title %}Register Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    #login-form{
+        text-transform: uppercase;
+        background-color:rgb(255, 254, 254);
+        
+        padding: 20px;
+        box-shadow: 10px 8px 8px 5px #007bff;
+    }
+
+    
+    </style>
+    
+      
+         
+            <div class="container">
+                <h4 class="text-center  text-light pt-5 ">Register </h4>
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form id="login-form" class="form-control" method="post">
+                                {% csrf_token %}
+                                {{ form|crispy }}                                
+                                    <input type="submit"   class="btn btn-outline-primary btn-lg form-control" value="Register">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+<!----
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-3 bg-white">
+            <h4>Register Page</h4>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success" type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+</div>
+-->
+
+{% endblock %}

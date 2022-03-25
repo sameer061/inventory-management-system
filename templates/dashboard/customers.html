@@ -1,0 +1,65 @@
+{% extends 'partials/base.html' %}
+{% block title %}Customer Page{% endblock %}
+
+
+{% block content %}
+{% include 'partials/topside.html' %}
+
+<div class="container-fluid">
+    <style>
+  
+  
+  
+      .card {
+        
+        background-color:#31363b;
+        border: 1px solid black;
+      }
+  
+   
+    </style>
+  <br><br>
+  
+  <div class="card card-body">
+    <a class="btn btn-secondary  btn-lg btn-block">TOTAL MEMBERS</a>
+    <hr>
+    <div class="table-responsive">
+      <table class="table   table-dark table-hover table-sm ">
+        <thead class="thead-dark text-center">
+          <tr class="text-center">
+            <th scope="col">NAME</th>
+            <th scope="col">PHONE</th>
+            <th scope="col">EMAIL</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for customer in customer %}
+          <tr class="text-center">
+            
+            <td>{{ customer.username }}</td>
+            <td>{{ customer.profile.phone }}</td>
+            <td>{{ customer.email }}</td>
+                                 
+            <td><a href="{% url 'dashboard-customer-detail' customer.id %}" class="btn btn-primary">
+              <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+              <lord-icon
+                  src="https://cdn.lordicon.com/tyounuzx.json"
+                  trigger="hover"
+                  colors="primary:#000000,secondary:#ffffff"
+                  style="width:30px;height:30px">
+              </lord-icon>
+                View</a></span>
+                  </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      
+      </table>
+      </div>
+  </div>
+  </div>
+
+
+
+{% endblock %}

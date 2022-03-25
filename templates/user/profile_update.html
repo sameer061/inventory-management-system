@@ -1,0 +1,41 @@
+{% extends 'partials/base.html' %}
+{% block title %}Customer Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    #update-form{
+        text-transform: uppercase;
+        background-color:rgb(255, 254, 254);
+        
+        padding: 20px;
+        box-shadow: 10px 8px 8px 5px #28a745;
+    }
+
+    
+    </style>
+    
+      
+         
+            <div class="container">
+                <h4 class="text-center  text-light pt-5 ">Register </h4>
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form method="POST" enctype="multipart/form-data" class="form-control" id="update-form">
+                                {% csrf_token %}
+                                {{ u_form|crispy }}
+                                {{ p_form|crispy }}                               
+                                    <input type="submit"   class="btn btn-outline-success btn-lg form-control" value="Update">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+
+
+
+{% endblock %}
